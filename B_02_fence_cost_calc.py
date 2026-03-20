@@ -1,5 +1,8 @@
 # Ask user for width amd loop until they
 # enter a number that is more than zero
+from enum import EnumCheck
+
+
 def num_check(question):
 
     error = "Please enter a number that is more than 0 zero\n"
@@ -7,6 +10,7 @@ def num_check(question):
 
         try:
             # ask the user for a number
+
             response = float(input(question))
 
             # check that the number is more than zero
@@ -23,9 +27,9 @@ def num_check(question):
 keep_going = ""
 while keep_going == "":
     # Get width and height
-    width = float(input("Width: "))
-    height = float(input("Height: "))
-    cost = float(input("Cost: "))
+    width = num_check("Width: ")
+    height = num_check("Height: ")
+    cost = num_check("Cost: ")
 
     # Calculate perimeter and price for the fence
     perimeter = 2 * (width + height)
@@ -33,12 +37,11 @@ while keep_going == "":
 
     # Display output
     print()
-    print(f"perimeter: {perimeter} units")
+    print(f"perimeter: {perimeter} m")
     print(f"Price: ${price: .2f}")
 
     # Ask the user if they want to keep going
     keep_going = input("Press enter to keep going or any key to quit")
     print()
 
-print("Thank you for using the area / perimeter calculator")
-print()
+print("Thank you for using the calculator")
